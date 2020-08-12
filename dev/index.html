@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;my-element> Demo</title>
+    <style>
+      .parent {
+        overflow: scroll;
+        height: 300px;
+        width: 100%;
+        background: papayawhip;
+        display: flex;
+      }
+      .parent::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parent">
+      <div id="child" style="height: 700px; width: 100%;"></div>
+      <gear-scrollbar></gear-scrollbar>
+    </div>
+    <script type="module" src="../output/index.js"></script>
+  </body>
+</html>
