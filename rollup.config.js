@@ -6,7 +6,7 @@ import filesize from 'rollup-plugin-filesize';
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
-  input: 'src/index.ts',
+  input: 'src/main.ts',
   output: {
     dir: 'output',
     format: 'esm',

@@ -6,23 +6,307 @@
     <title>&lt;my-element> Demo</title>
     <style>
       .parent {
-        overflow: scroll;
-        height: 300px;
-        width: 100%;
-        background: papayawhip;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 600px;
+        gap: 10px 10px;
+        color: rgb(91, 91, 91);
       }
-      .parent::-webkit-scrollbar {
-        display: none;
+      .parent > div::-webkit-scrollbar {
+        /* display: none; */
+      }
+      .parent > div {
+        overflow: auto;
+        scroll-behavior: smooth;
+        position: relative;
+      }
+
+      #child1 {
+        background: pink;
+      }
+
+      #child2 {
+        background: plum;
+      }
+
+      #child3 {
+        background: rosybrown;
+      }
+
+      #child4 {
+        background: skyblue;
       }
     </style>
   </head>
 
   <body>
     <div class="parent">
-      <div id="child" style="height: 700px; width: 100%;"></div>
-      <gear-scrollbar></gear-scrollbar>
+      <div id="child1">
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Eros donec
+          ac odio tempor orci dapibus ultrices in. Integer quis auctor elit sed
+          vulputate mi sit amet mauris. Dictum fusce ut placerat orci. Quis
+          auctor elit sed vulputate. Nisi scelerisque eu ultrices vitae. Nullam
+          ac tortor vitae purus faucibus. Tortor condimentum lacinia quis vel
+          eros donec ac odio. Sed felis eget velit aliquet sagittis. Pretium
+          lectus quam id leo in vitae. Nisl condimentum id venenatis a
+          condimentum vitae. Vivamus at augue eget arcu dictum varius duis at
+          consectetur. Lacus viverra vitae congue eu consequat ac felis donec
+          et. Tellus rutrum tellus pellentesque eu tincidunt. Diam quam nulla
+          porttitor massa id neque aliquam vestibulum morbi. Nam at lectus urna
+          duis convallis convallis. Quis ipsum suspendisse ultrices gravida
+          dictum fusce. Sem nulla pharetra diam sit amet nisl suscipit. Orci a
+          scelerisque purus semper eget duis. Nunc id cursus metus aliquam
+          eleifend mi. Diam vel quam elementum pulvinar etiam. Facilisis gravida
+          neque convallis a cras semper auctor neque vitae. Dui faucibus in
+          ornare quam viverra orci. Imperdiet sed euismod nisi porta lorem
+          mollis aliquam ut porttitor. Arcu dui vivamus arcu felis bibendum ut
+          tristique. Risus in hendrerit gravida rutrum quisque non tellus. Arcu
+          non odio euismod lacinia at quis. Pellentesque elit eget gravida cum
+          sociis natoque. Quam viverra orci sagittis eu volutpat odio. Ac auctor
+          augue mauris augue neque gravida. Sed euismod nisi porta lorem.
+          Posuere urna nec tincidunt praesent semper feugiat. Sed nisi lacus sed
+          viverra tellus in. Dui ut ornare lectus sit. Ultrices neque ornare
+          aenean euismod elementum nisi quis eleifend. Nunc pulvinar sapien et
+          ligula ullamcorper malesuada. Dui ut ornare lectus sit amet est
+          placerat. Et netus et malesuada fames ac. In eu mi bibendum neque
+          egestas congue. Magna ac placerat vestibulum lectus mauris ultrices
+          eros in cursus. Vulputate sapien nec sagittis aliquam. Elementum nisi
+          quis eleifend quam adipiscing vitae proin sagittis. Nullam ac tortor
+          vitae purus faucibus ornare suspendisse. Nulla porttitor massa id
+          neque aliquam vestibulum morbi blandit. Egestas erat imperdiet sed
+          euismod. Quam adipiscing vitae proin sagittis nisl rhoncus mattis
+          rhoncus urna. Lectus quam id leo in vitae turpis massa sed elementum.
+          At risus viverra adipiscing at in. Magna ac placerat vestibulum lectus
+          mauris ultrices eros in cursus. Tellus mauris a diam maecenas sed
+          enim. Nullam ac tortor vitae purus faucibus ornare suspendisse sed.
+          Risus pretium quam vulputate dignissim. Amet porttitor eget dolor
+          morbi non arcu risus. Mauris pharetra et ultrices neque. Tempus
+          imperdiet nulla malesuada pellentesque elit. Odio euismod lacinia at
+          quis risus sed vulputate odio ut. In arcu cursus euismod quis. A lacus
+          vestibulum sed arcu non odio euismod lacinia. At tellus at urna
+          condimentum mattis pellentesque id. Felis bibendum ut tristique et
+          egestas quis ipsum suspendisse ultrices. Sollicitudin aliquam ultrices
+          sagittis orci a scelerisque purus semper eget. Consequat id porta nibh
+          venenatis. Viverra tellus in hac habitasse platea dictumst. Est ante
+          in nibh mauris cursus mattis molestie a iaculis. Venenatis cras sed
+          felis eget velit aliquet sagittis id. Sed viverra ipsum nunc aliquet
+          bibendum. In tellus integer feugiat scelerisque varius morbi enim.
+          Elementum nibh tellus molestie nunc non blandit massa enim. Dictum at
+          tempor commodo ullamcorper a. Nunc sed velit dignissim sodales ut.
+          Scelerisque viverra mauris in aliquam. In ornare quam viverra orci
+          sagittis eu volutpat. Egestas diam in arcu cursus euismod quis.
+          Facilisis mauris sit amet massa vitae. Ut enim blandit volutpat
+          maecenas volutpat blandit aliquam. Orci ac auctor augue mauris. Nullam
+          ac tortor vitae purus faucibus ornare suspendisse. Cursus metus
+          aliquam eleifend mi in nulla. Volutpat diam ut venenatis tellus in
+          metus vulputate eu. Diam maecenas sed enim ut. Massa tincidunt nunc
+          pulvinar sapien et ligula. Pellentesque habitant morbi tristique
+          senectus et netus et malesuada. Malesuada nunc vel risus commodo
+          viverra.
+        </div>
+
+        <!-- <gear-scrollbar></gear-scrollbar> -->
+      </div>
+      <div id="child2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Eros donec ac odio
+        tempor orci dapibus ultrices in. Integer quis auctor elit sed vulputate
+        mi sit amet mauris. Dictum fusce ut placerat orci. Quis auctor elit sed
+        vulputate. Nisi scelerisque eu ultrices vitae. Nullam ac tortor vitae
+        purus faucibus. Tortor condimentum lacinia quis vel eros donec ac odio.
+        Sed felis eget velit aliquet sagittis. Pretium lectus quam id leo in
+        vitae. Nisl condimentum id venenatis a condimentum vitae. Vivamus at
+        augue eget arcu dictum varius duis at consectetur. Lacus viverra vitae
+        congue eu consequat ac felis donec et. Tellus rutrum tellus pellentesque
+        eu tincidunt. Diam quam nulla porttitor massa id neque aliquam
+        vestibulum morbi. Nam at lectus urna duis convallis convallis. Quis
+        ipsum suspendisse ultrices gravida dictum fusce. Sem nulla pharetra diam
+        sit amet nisl suscipit. Orci a scelerisque purus semper eget duis. Nunc
+        id cursus metus aliquam eleifend mi. Diam vel quam elementum pulvinar
+        etiam. Facilisis gravida neque convallis a cras semper auctor neque
+        vitae. Dui faucibus in ornare quam viverra orci. Imperdiet sed euismod
+        nisi porta lorem mollis aliquam ut porttitor. Arcu dui vivamus arcu
+        felis bibendum ut tristique. Risus in hendrerit gravida rutrum quisque
+        non tellus. Arcu non odio euismod lacinia at quis. Pellentesque elit
+        eget gravida cum sociis natoque. Quam viverra orci sagittis eu volutpat
+        odio. Ac auctor augue mauris augue neque gravida. Sed euismod nisi porta
+        lorem. Posuere urna nec tincidunt praesent semper feugiat. Sed nisi
+        lacus sed viverra tellus in. Dui ut ornare lectus sit. Ultrices neque
+        ornare aenean euismod elementum nisi quis eleifend. Nunc pulvinar sapien
+        et ligula ullamcorper malesuada. Dui ut ornare lectus sit amet est
+        placerat. Et netus et malesuada fames ac. In eu mi bibendum neque
+        egestas congue. Magna ac placerat vestibulum lectus mauris ultrices eros
+        in cursus. Vulputate sapien nec sagittis aliquam. Elementum nisi quis
+        eleifend quam adipiscing vitae proin sagittis. Nullam ac tortor vitae
+        purus faucibus ornare suspendisse. Nulla porttitor massa id neque
+        aliquam vestibulum morbi blandit. Egestas erat imperdiet sed euismod.
+        Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.
+        Lectus quam id leo in vitae turpis massa sed elementum. At risus viverra
+        adipiscing at in. Magna ac placerat vestibulum lectus mauris ultrices
+        eros in cursus. Tellus mauris a diam maecenas sed enim. Nullam ac tortor
+        vitae purus faucibus ornare suspendisse sed. Risus pretium quam
+        vulputate dignissim. Amet porttitor eget dolor morbi non arcu risus.
+        Mauris pharetra et ultrices neque. Tempus imperdiet nulla malesuada
+        pellentesque elit. Odio euismod lacinia at quis risus sed vulputate odio
+        ut. In arcu cursus euismod quis. A lacus vestibulum sed arcu non odio
+        euismod lacinia. At tellus at urna condimentum mattis pellentesque id.
+        Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices.
+        Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper
+        eget. Consequat id porta nibh venenatis. Viverra tellus in hac habitasse
+        platea dictumst. Est ante in nibh mauris cursus mattis molestie a
+        iaculis. Venenatis cras sed felis eget velit aliquet sagittis id. Sed
+        viverra ipsum nunc aliquet bibendum. In tellus integer feugiat
+        scelerisque varius morbi enim. Elementum nibh tellus molestie nunc non
+        blandit massa enim. Dictum at tempor commodo ullamcorper a. Nunc sed
+        velit dignissim sodales ut. Scelerisque viverra mauris in aliquam. In
+        ornare quam viverra orci sagittis eu volutpat. Egestas diam in arcu
+        cursus euismod quis. Facilisis mauris sit amet massa vitae. Ut enim
+        blandit volutpat maecenas volutpat blandit aliquam. Orci ac auctor augue
+        mauris. Nullam ac tortor vitae purus faucibus ornare suspendisse. Cursus
+        metus aliquam eleifend mi in nulla. Volutpat diam ut venenatis tellus in
+        metus vulputate eu. Diam maecenas sed enim ut. Massa tincidunt nunc
+        pulvinar sapien et ligula. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada. Malesuada nunc vel risus commodo
+        viverra.
+      </div>
+      <div id="child3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Eros donec ac odio
+        tempor orci dapibus ultrices in. Integer quis auctor elit sed vulputate
+        mi sit amet mauris. Dictum fusce ut placerat orci. Quis auctor elit sed
+        vulputate. Nisi scelerisque eu ultrices vitae. Nullam ac tortor vitae
+        purus faucibus. Tortor condimentum lacinia quis vel eros donec ac odio.
+        Sed felis eget velit aliquet sagittis. Pretium lectus quam id leo in
+        vitae. Nisl condimentum id venenatis a condimentum vitae. Vivamus at
+        augue eget arcu dictum varius duis at consectetur. Lacus viverra vitae
+        congue eu consequat ac felis donec et. Tellus rutrum tellus pellentesque
+        eu tincidunt. Diam quam nulla porttitor massa id neque aliquam
+        vestibulum morbi. Nam at lectus urna duis convallis convallis. Quis
+        ipsum suspendisse ultrices gravida dictum fusce. Sem nulla pharetra diam
+        sit amet nisl suscipit. Orci a scelerisque purus semper eget duis. Nunc
+        id cursus metus aliquam eleifend mi. Diam vel quam elementum pulvinar
+        etiam. Facilisis gravida neque convallis a cras semper auctor neque
+        vitae. Dui faucibus in ornare quam viverra orci. Imperdiet sed euismod
+        nisi porta lorem mollis aliquam ut porttitor. Arcu dui vivamus arcu
+        felis bibendum ut tristique. Risus in hendrerit gravida rutrum quisque
+        non tellus. Arcu non odio euismod lacinia at quis. Pellentesque elit
+        eget gravida cum sociis natoque. Quam viverra orci sagittis eu volutpat
+        odio. Ac auctor augue mauris augue neque gravida. Sed euismod nisi porta
+        lorem. Posuere urna nec tincidunt praesent semper feugiat. Sed nisi
+        lacus sed viverra tellus in. Dui ut ornare lectus sit. Ultrices neque
+        ornare aenean euismod elementum nisi quis eleifend. Nunc pulvinar sapien
+        et ligula ullamcorper malesuada. Dui ut ornare lectus sit amet est
+        placerat. Et netus et malesuada fames ac. In eu mi bibendum neque
+        egestas congue. Magna ac placerat vestibulum lectus mauris ultrices eros
+        in cursus. Vulputate sapien nec sagittis aliquam. Elementum nisi quis
+        eleifend quam adipiscing vitae proin sagittis. Nullam ac tortor vitae
+        purus faucibus ornare suspendisse. Nulla porttitor massa id neque
+        aliquam vestibulum morbi blandit. Egestas erat imperdiet sed euismod.
+        Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.
+        Lectus quam id leo in vitae turpis massa sed elementum. At risus viverra
+        adipiscing at in. Magna ac placerat vestibulum lectus mauris ultrices
+        eros in cursus. Tellus mauris a diam maecenas sed enim. Nullam ac tortor
+        vitae purus faucibus ornare suspendisse sed. Risus pretium quam
+        vulputate dignissim. Amet porttitor eget dolor morbi non arcu risus.
+        Mauris pharetra et ultrices neque. Tempus imperdiet nulla malesuada
+        pellentesque elit. Odio euismod lacinia at quis risus sed vulputate odio
+        ut. In arcu cursus euismod quis. A lacus vestibulum sed arcu non odio
+        euismod lacinia. At tellus at urna condimentum mattis pellentesque id.
+        Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices.
+        Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper
+        eget. Consequat id porta nibh venenatis. Viverra tellus in hac habitasse
+        platea dictumst. Est ante in nibh mauris cursus mattis molestie a
+        iaculis. Venenatis cras sed felis eget velit aliquet sagittis id. Sed
+        viverra ipsum nunc aliquet bibendum. In tellus integer feugiat
+        scelerisque varius morbi enim. Elementum nibh tellus molestie nunc non
+        blandit massa enim. Dictum at tempor commodo ullamcorper a. Nunc sed
+        velit dignissim sodales ut. Scelerisque viverra mauris in aliquam. In
+        ornare quam viverra orci sagittis eu volutpat. Egestas diam in arcu
+        cursus euismod quis. Facilisis mauris sit amet massa vitae. Ut enim
+        blandit volutpat maecenas volutpat blandit aliquam. Orci ac auctor augue
+        mauris. Nullam ac tortor vitae purus faucibus ornare suspendisse. Cursus
+        metus aliquam eleifend mi in nulla. Volutpat diam ut venenatis tellus in
+        metus vulputate eu. Diam maecenas sed enim ut. Massa tincidunt nunc
+        pulvinar sapien et ligula. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada. Malesuada nunc vel risus commodo
+        viverra.
+      </div>
+      <div id="child4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Eros donec ac odio
+        tempor orci dapibus ultrices in. Integer quis auctor elit sed vulputate
+        mi sit amet mauris. Dictum fusce ut placerat orci. Quis auctor elit sed
+        vulputate. Nisi scelerisque eu ultrices vitae. Nullam ac tortor vitae
+        purus faucibus. Tortor condimentum lacinia quis vel eros donec ac odio.
+        Sed felis eget velit aliquet sagittis. Pretium lectus quam id leo in
+        vitae. Nisl condimentum id venenatis a condimentum vitae. Vivamus at
+        augue eget arcu dictum varius duis at consectetur. Lacus viverra vitae
+        congue eu consequat ac felis donec et. Tellus rutrum tellus pellentesque
+        eu tincidunt. Diam quam nulla porttitor massa id neque aliquam
+        vestibulum morbi. Nam at lectus urna duis convallis convallis. Quis
+        ipsum suspendisse ultrices gravida dictum fusce. Sem nulla pharetra diam
+        sit amet nisl suscipit. Orci a scelerisque purus semper eget duis. Nunc
+        id cursus metus aliquam eleifend mi. Diam vel quam elementum pulvinar
+        etiam. Facilisis gravida neque convallis a cras semper auctor neque
+        vitae. Dui faucibus in ornare quam viverra orci. Imperdiet sed euismod
+        nisi porta lorem mollis aliquam ut porttitor. Arcu dui vivamus arcu
+        felis bibendum ut tristique. Risus in hendrerit gravida rutrum quisque
+        non tellus. Arcu non odio euismod lacinia at quis. Pellentesque elit
+        eget gravida cum sociis natoque. Quam viverra orci sagittis eu volutpat
+        odio. Ac auctor augue mauris augue neque gravida. Sed euismod nisi porta
+        lorem. Posuere urna nec tincidunt praesent semper feugiat. Sed nisi
+        lacus sed viverra tellus in. Dui ut ornare lectus sit. Ultrices neque
+        ornare aenean euismod elementum nisi quis eleifend. Nunc pulvinar sapien
+        et ligula ullamcorper malesuada. Dui ut ornare lectus sit amet est
+        placerat. Et netus et malesuada fames ac. In eu mi bibendum neque
+        egestas congue. Magna ac placerat vestibulum lectus mauris ultrices eros
+        in cursus. Vulputate sapien nec sagittis aliquam. Elementum nisi quis
+        eleifend quam adipiscing vitae proin sagittis. Nullam ac tortor vitae
+        purus faucibus ornare suspendisse. Nulla porttitor massa id neque
+        aliquam vestibulum morbi blandit. Egestas erat imperdiet sed euismod.
+        Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna.
+        Lectus quam id leo in vitae turpis massa sed elementum. At risus viverra
+        adipiscing at in. Magna ac placerat vestibulum lectus mauris ultrices
+        eros in cursus. Tellus mauris a diam maecenas sed enim. Nullam ac tortor
+        vitae purus faucibus ornare suspendisse sed. Risus pretium quam
+        vulputate dignissim. Amet porttitor eget dolor morbi non arcu risus.
+        Mauris pharetra et ultrices neque. Tempus imperdiet nulla malesuada
+        pellentesque elit. Odio euismod lacinia at quis risus sed vulputate odio
+        ut. In arcu cursus euismod quis. A lacus vestibulum sed arcu non odio
+        euismod lacinia. At tellus at urna condimentum mattis pellentesque id.
+        Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices.
+        Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper
+        eget. Consequat id porta nibh venenatis. Viverra tellus in hac habitasse
+        platea dictumst. Est ante in nibh mauris cursus mattis molestie a
+        iaculis. Venenatis cras sed felis eget velit aliquet sagittis id. Sed
+        viverra ipsum nunc aliquet bibendum. In tellus integer feugiat
+        scelerisque varius morbi enim. Elementum nibh tellus molestie nunc non
+        blandit massa enim. Dictum at tempor commodo ullamcorper a. Nunc sed
+        velit dignissim sodales ut. Scelerisque viverra mauris in aliquam. In
+        ornare quam viverra orci sagittis eu volutpat. Egestas diam in arcu
+        cursus euismod quis. Facilisis mauris sit amet massa vitae. Ut enim
+        blandit volutpat maecenas volutpat blandit aliquam. Orci ac auctor augue
+        mauris. Nullam ac tortor vitae purus faucibus ornare suspendisse. Cursus
+        metus aliquam eleifend mi in nulla. Volutpat diam ut venenatis tellus in
+        metus vulputate eu. Diam maecenas sed enim ut. Massa tincidunt nunc
+        pulvinar sapien et ligula. Pellentesque habitant morbi tristique
+        senectus et netus et malesuada. Malesuada nunc vel risus commodo
+        viverra.
+        <!-- <gear-scrollbar></gear-scrollbar> -->
+      </div>
     </div>
-    <script type="module" src="../output/index.js"></script>
+    <!-- <script type="module" src="../output/index.js"></script> -->
+    <script type="module">
+      import gearScroll from '../output/main.js';
+      const scroll1 = new gearScroll('#child1', {
+        scrollbars: true,
+        gearSpeed: 1,
+      });
+      const scroll2 = new gearScroll('#child2');
+      const scroll3 = new gearScroll('#child3');
+      const scroll4 = new gearScroll('#child4');
+    </script>
   </body>
 </html>
