@@ -6,11 +6,24 @@ import filesize from 'rollup-plugin-filesize';
 const isProduction = process.env.NODE_ENV === 'production';
 
 export default {
-  input: 'src/main.ts',
-  output: {
-    dir: 'output',
-    format: 'esm',
-  },
+  input: 'src/gearscroll.ts',
+  output: [
+    {
+      format: 'esm',
+      file: 'dist/gearscroll.esm.js'
+    },
+    {
+      format: 'umd',
+      file: 'dist/gearscroll.js',
+      name: 'gearScroll',
+      sourcemap: true
+    },
+    {
+      format: 'iife',
+      file: 'dist/gearscroll.min.js',
+      name: 'gearScroll'
+    }
+  ],
   onwarn(warning) {
     if (warning.code !== 'THIS_IS_UNDEFINED') {
       console.error(`(!) ${warning.message}`);
@@ -19,17 +32,6 @@ export default {
   plugins: [
     typescript(),
     resolve(),
-    isProduction &&
-      terser({
-        module: true,
-        warnings: true,
-        mangle: {
-          properties: {
-            regex: /^__/,
-          },
-        },
-        output: {comments: false},
-      }),
     filesize({
       showBrotliSize: true,
     }),

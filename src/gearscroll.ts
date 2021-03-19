@@ -27,6 +27,18 @@ interface options {
     autoResize?: boolean;
 }
 
+const createStyleTag = () => {
+    const styletag = document.createElement('style');
+    styletag.setAttribute("rel", "stylesheet");
+    styletag.setAttribute("type", "text/css");
+    document.getElementsByTagName("head")[0].appendChild(styletag);
+    styletag.innerHTML = styles;
+    styletag.appendChild(document.createTextNode(styles));
+    return styletag;
+}
+
+const gearStyles = createStyleTag();
+
 export default class gearScroll {
     private container: HTMLElement;
     private angle = 0;
@@ -55,7 +67,19 @@ export default class gearScroll {
         } else {
             this.container = selector;
         }
-        this.scrollDiv = this.scrollDiv = document.createElement('div');
+        this.scrollDiv = document.createElement('div');
+        let scrollStyle = '';
+        if (this.options.scrollbars === false) {
+            scrollStyle =
+                `${this.selector}::-webkit-scrollbar {  /* Chrome, Safari and Opera */
+                display: none
+            } 
+            ${this.selector} { 
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }`;
+        }
+        gearStyles.appendChild(document.createTextNode(scrollStyle));
         this.scrollHeight = this.container.scrollHeight;
         this.calcChainPositions().createScrollbar().addScrollListener();
         this.resizeObserver().observe(this.container);
@@ -96,14 +120,8 @@ export default class gearScroll {
     }
 
     private createScrollbar() {
-        let scrollStyle = '';
-        if (this.options.scrollbars === false) {
-            scrollStyle = `${this.selector}::-webkit-scrollbar { display: none}`;
-            // this.container.appendChild(style);
-        }
         this.scrollDiv.innerHTML =
-            `<style>${styles} ${scrollStyle}</style>
-            <div class="gearscroll-div">
+            `<div class="gearscroll-div">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%" height="${this.scrollHeight}px" preserveAspectRatio="xMidYMid meet">
                     <clipPath id="myClip">
                         <rect x="0" y="0" width="50px" height="100%" />

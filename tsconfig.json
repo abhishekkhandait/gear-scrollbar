@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "target": "es2017",
     "module": "es2015",
     "lib": ["es2017", "dom", "dom.iterable"],
     "declaration": true,
     "declarationMap": true,
+    "emitDeclarationOnly": true,
     "sourceMap": false,
     "outDir": "./output",
     "rootDir": "./src",

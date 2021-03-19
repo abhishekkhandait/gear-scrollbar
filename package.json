@@ -2,13 +2,16 @@
   "name": "gear-scrollbar",
   "version": "1.0.0",
   "description": "gear styled scrollbar",
-  "main": "index.js",
+  "main": "dist/gearscroll.js",
+  "module": "dist/gearscroll.min.js",
+  "typings": "dist/gearscroll.d.ts",
   "repository": "https://github.com/abhishekkhandait/gear-scrollbar.git",
   "author": "Abhishek Khandait <khandaitabhishek@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c --watch",
-    "build:prod": "NODE_ENV=production rollup -c"
+    "build:prod": "NODE_ENV=production rollup -c && yarn generate-types",
+    "generate-types": "npx typescript src/gearscroll.ts --declaration --allowJs --emitDeclarationOnly --outDir dist"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.0",
@@ -20,7 +23,9 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "lit-element": "^2.3.1",
+    "@types/react": "^17.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "resize-observer-polyfill": "^1.5.1"
   }
 }

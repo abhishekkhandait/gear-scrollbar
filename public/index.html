@@ -7,34 +7,36 @@
     <style>
       .parent {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 600px;
-        gap: 10px 10px;
-        color: rgb(91, 91, 91);
-      }
-      .parent > div::-webkit-scrollbar {
-        /* display: none; */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: calc(100vh - 0.75em);
+        gap: 0.5em;
+        color: rgb(255, 249, 249);
+        font-size: 1.25em;
+        overflow: hidden;
       }
       .parent > div {
         overflow: auto;
         scroll-behavior: smooth;
         position: relative;
+        padding: 1em;
       }
 
       #child1 {
-        background: pink;
+        grid-row: 1/3;
+        background: #ea8685;
       }
-
       #child2 {
-        background: plum;
+        grid-row: 1/3;
+        background: #63cdda;
       }
-
       #child3 {
-        background: rosybrown;
+        grid-column: 3/5;
+        background: #f3a683;
       }
-
       #child4 {
-        background: skyblue;
+        grid-column: 3/5;
+        background: #778beb;
       }
     </style>
   </head>
@@ -297,9 +299,22 @@
         <!-- <gear-scrollbar></gear-scrollbar> -->
       </div>
     </div>
-    <!-- <script type="module" src="../output/index.js"></script> -->
-    <script type="module">
-      import gearScroll from '../output/main.js';
+    <script src="../dist/gearscroll.min.js"></script>
+
+    <!-- umd -->
+    <script>
+      const scroll1 = new gearScroll('#child1', {
+        scrollbars: true,
+        gearSpeed: 2,
+      });
+      const scroll2 = new gearScroll('#child2');
+      const scroll3 = new gearScroll('#child3');
+      const scroll4 = new gearScroll('#child4');
+    </script>
+
+    <!-- esm -->
+    <!-- <script type="module">
+      import gearScroll from "../dist/gearscroll.esm.js";
       const scroll1 = new gearScroll('#child1', {
         scrollbars: true,
         gearSpeed: 1,
@@ -307,6 +322,6 @@
       const scroll2 = new gearScroll('#child2');
       const scroll3 = new gearScroll('#child3');
       const scroll4 = new gearScroll('#child4');
-    </script>
+    </script> -->
   </body>
 </html>
