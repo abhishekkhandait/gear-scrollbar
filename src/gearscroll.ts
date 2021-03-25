@@ -1,4 +1,11 @@
 const styles = `
+    .gearscroll-container {
+        overflow: auto;
+    }
+    .gearscroll-hidescrollbar::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+    }
     .gearscroll-div {
       position: absolute;
       right: -50px;
@@ -32,7 +39,6 @@ const createStyleTag = () => {
     styletag.setAttribute("rel", "stylesheet");
     styletag.setAttribute("type", "text/css");
     document.getElementsByTagName("head")[0].appendChild(styletag);
-    styletag.innerHTML = styles;
     styletag.appendChild(document.createTextNode(styles));
     return styletag;
 }
@@ -50,7 +56,7 @@ export default class gearScroll {
     private timer = 0;
     private scrollShowTimer = 0;
 
-    constructor(private selector: string | HTMLElement, options: options) {
+    constructor(selector: string | HTMLElement, options: options) {
         this.options = {
             autoHide: true,
             autoHideTimeout: 1000,
@@ -67,17 +73,11 @@ export default class gearScroll {
         } else {
             this.container = selector;
         }
+        this.container.classList.add('gearscroll-container');
         this.scrollDiv = document.createElement('div');
         let scrollStyle = '';
         if (this.options.scrollbars === false) {
-            scrollStyle =
-                `${this.selector}::-webkit-scrollbar {  /* Chrome, Safari and Opera */
-                display: none
-            } 
-            ${this.selector} { 
-                -ms-overflow-style: none; /* IE and Edge */
-                scrollbar-width: none; /* Firefox */
-            }`;
+            this.container.classList.add('gearscroll-hidescrollbar');
         }
         gearStyles.appendChild(document.createTextNode(scrollStyle));
         this.scrollHeight = this.container.scrollHeight;
